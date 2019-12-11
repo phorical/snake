@@ -1,13 +1,13 @@
 //Brady Hahn
 //2019-12-10
 
-function createSnakeCell(cellsFromLeft, cellsFromTop) {
+var createSnakeCell = function(cellsFromLeft, cellsFromTop) {
     return ([snakeSize * cellsFromLeft, snakeSize * cellsFromTop]);
 }
 
 
 
-function fillSnakeCell(cellPart1, cellPart2) {
+var fillSnakeCell = function(cellPart1, cellPart2) {
     if (typeof cellPart2 === 'undefined') {
         if (Array.isArray(cellPart1) && cellPart1.length === 2) {
             cellPart2 = cellPart1[1];
@@ -25,7 +25,7 @@ function fillSnakeCell(cellPart1, cellPart2) {
 }
 
 //todo: randomize the snake starting position
-function createSnake(start, size) {
+var createSnake = function(start, size) {
     if (!Array.isArray(start) || start.length != 2) {
         throw Error("Start cell is not a touple");
     }
@@ -33,6 +33,13 @@ function createSnake(start, size) {
 //create the snake
 snake = [createSnakeCell(5, 2), createSnakeCell(4, 2), createSnakeCell(3, 2), createSnakeCell(3, 1), createSnakeCell(3, 0)];
 
-for (var i = 0; i < snake.length; i++) {
-    fillSnakeCell(snake[i]);
+//fill the snake
+var paintCanvas = function() {
+    snakeContext.fillStyle = colorBackground;
+    snakeContext.fillRect(0,0,canvasWidth, canvasHeight);
+    for (var i = 0; i < snake.length; i++) {
+        fillSnakeCell(snake[i]);
+    }
 }
+paintCanvas();
+

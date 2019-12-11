@@ -4,6 +4,7 @@ var snakeCanvas = document.getElementById('snakeCanvas');
 var snakeContext = snakeCanvas.getContext('2d');
 var color1 = "MediumOrchid";
 var color2 = "MediumSlateBlue";
+var colorBackground = "Gainsboro";
 var snake;
 var snakeSize = 40;
 //using maxSize so this can scale correctly... 

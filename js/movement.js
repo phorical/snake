@@ -99,17 +99,17 @@ document.onkeydown = function (event) {
     if (key === "ArrowDown" && direction !== "up") {
         nextDirection = "down";
         console.log("down");
-    } else if (key === "ArrowUp" && direction != "down") {
+    } else if (key === "ArrowUp" && direction !== "down") {
         nextDirection = "up";
         console.log("up");
-    } else if (key === "ArrowLeft" && direction != "right") {
+    } else if (key === "ArrowLeft" && direction !== "right") {
         nextDirection = "left";
         console.log("left");
-    } else if (key === "ArrowRight" && direction != "left") {
+    } else if (key === "ArrowRight" && direction !== "left") {
         nextDirection = "right";
         console.log("right");
     }
 
 }
 
-gameInterval = setInterval(tick, 2000);
+gameInterval = setInterval(tick, 100);

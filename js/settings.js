@@ -9,7 +9,7 @@ var colorFoodFill = "DarkOliveGreen";
 var colorBackground = "Gainsboro";
 var snake;
 var food;
-var snakeSize = 40;
+var snakeSize = 20;
 //using maxSize so this can scale correctly... 
 //want to use a 20 px snake all the time
 //easter egg: resize your window during the game and the size will vary
@@ -19,3 +19,5 @@ var canvasWidth = cellsPerSideOfCanvas * snakeSize;
 var canvasHeight = canvasWidth;
 snakeCanvas.setAttribute("width", canvasWidth);
 snakeCanvas.setAttribute("height", canvasHeight);
+var direction;
+var nextDirection = "right";

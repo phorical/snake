@@ -38,7 +38,7 @@ var createSnake = function (start, size) {
 }
 //create the snake
 snake = [createCell(5, 2), createCell(4, 2), createCell(3, 2), createCell(3, 1), createCell(3, 0)];
-food = createCell(0, 0);
+food = createCell(7, 2);
 
 //fill the snake
 var paintCanvas = function () {

@@ -30,8 +30,24 @@ var isSnakeHeadOnFood = function () {
     return (snake[0][0] === food[0] && snake[0][1] === food[1]);
 }
 
+var isFoodOnSnake = function() {
+    for (var i = 0; i < snake.length; i++) {
+        if (food[0] === snake[i][0] && food[1] === snake[i][1]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+var createNewFood = function () {
+    do {
+        food[0] = Math.floor(Math.random() * canvasWidth / snakeSize);
+        food[1] = Math.floor(Math.random() * canvasHeight / snakeSize);
+    } while (isFoodOnSnake());
+}
+
 var tick = function () {
-    direction = randomChoiceFromArray([ /*"up", "down", "left", */ "right"]);
+    direction = randomChoiceFromArray([ /*"up", "down", "left", */"right"]);
     moveSnakeOneCell();
     if (isSnakeHeadOutsideBounds()) {
         gameInterval = clearInterval(gameInterval);
